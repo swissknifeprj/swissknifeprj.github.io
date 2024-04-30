@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }).then(function (data) {
     return pages.push.apply(pages, _toConsumableArray(data));
   });
-  console.log(pages);
   function findMatches(wordToMatch, pages) {
     return pages.filter(function (place) {
       var regex = new RegExp(wordToMatch, 'gi');

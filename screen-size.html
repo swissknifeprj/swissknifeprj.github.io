@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <title>Title</title>
+    <title>What is my screen size</title>
     <link rel="stylesheet" href="dist/css/screen-size.css" />
   </head>
   <body>
@@ -12,7 +12,7 @@
       <div class="container relative">
         <div class="o-header__wrap">
           <a href="/" class="o-header__logo">
-            <img src="img/swissknife-logo.png" alt="">
+            <img src="img/swissknife-logo.png" alt="Logo">
           </a>
       
           <div class="o-heaer__nav-search">
@@ -51,12 +51,21 @@
     </header>
 
     <main>
-      <div class="container">
-        <div class="content">1</div>
-      </div>
+      <section class="s-screen-size">
+        <div class="container">
+          <div class="s-screen-size__content js--screen-size-content"></div>
+
+          <h1 class="s-screen-size__title">What is my screen size</h1>
+
+          <div class="s-screen-size__description">
+            <p>Welcome to ScreenSizer – your instant solution for knowing the dimensions of your device's screen! Ever wondered about the exact size of your smartphone, tablet, or computer screen in pixels? With ScreenSizer, you no longer have to guess. As soon as you land on our page, our smart detection system instantly identifies the screen size of the device you're using, providing you with accurate pixel dimensions right away.</p>
+            <p>No more searching through device specifications or fumbling with measuring tapes – ScreenSizer simplifies the process with a single click. Whether you're a developer fine-tuning responsive designs or a curious user wanting to know more about your digital companion, ScreenSizer puts the information you need right at your fingertips. Experience the convenience and efficiency of ScreenSizer today – because when it comes to screen sizes, precision matters.</p>
+          </div>
+        </div>
+      </section>
     </main>
     
-    <footer>FOOTER</footer>
+    <footer class="o-footer"></footer>
     <script src="dist/js/app.js"></script>
     <script src="dist/js/screen-size.js"></script>
   </body>

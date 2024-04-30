@@ -8,7 +8,7 @@
 /***/ (() => {
 
 function getScreenSize() {
-  var divContent = document.querySelector('.content');
+  var divContent = document.querySelector('.js--screen-size-content');
   var width = window.innerWidth;
   var height = window.innerHeight;
   var divContentText = "".concat(width, "px x ").concat(height, "px");
