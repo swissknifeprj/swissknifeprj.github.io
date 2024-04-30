@@ -2,5 +2,9 @@
     {
         "name": "Screen size",
         "url": "screen-size.html"
+    },
+    {
+        "name": "My IP",
+        "url": "my-ip.html"
     }
 ]

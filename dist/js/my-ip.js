@@ -1,22 +1,22 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/components/screen-size.js":
-/*!******************************************!*\
-  !*** ./src/js/components/screen-size.js ***!
-  \******************************************/
+/***/ "./src/js/components/my-ip.js":
+/*!************************************!*\
+  !*** ./src/js/components/my-ip.js ***!
+  \************************************/
 /***/ (() => {
 
 document.addEventListener("DOMContentLoaded", function () {
-  function getScreenSize() {
-    var divContent = document.querySelector('.js--screen-size-content');
-    var width = window.innerWidth;
-    var height = window.innerHeight;
-    var divContentText = "".concat(width, "px x ").concat(height, "px");
+  var divContent = document.querySelector('.js--screen-size-content');
+  fetch('https://api.ipify.org?format=json').then(function (response) {
+    return response.json();
+  }).then(function (data) {
+    var divContentText = data.ip;
     divContent.innerHTML = divContentText;
-  }
-  getScreenSize();
-  window.addEventListener('resize', getScreenSize);
+  })["catch"](function (error) {
+    console.log('Error:', error);
+  });
 });
 
 /***/ })
@@ -51,12 +51,12 @@ document.addEventListener("DOMContentLoaded", function () {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*******************************!*\
-  !*** ./src/js/screen-size.js ***!
-  \*******************************/
+/*!*************************!*\
+  !*** ./src/js/my-ip.js ***!
+  \*************************/
 // global.$ = global.jQuery = require('jquery');
 
-__webpack_require__(/*! ./components/screen-size */ "./src/js/components/screen-size.js");
+__webpack_require__(/*! ./components/my-ip */ "./src/js/components/my-ip.js");
 })();
 
 /******/ })()

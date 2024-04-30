@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function findMatches(wordToMatch, pages) {
     return pages.filter(function (place) {
       var regex = new RegExp(wordToMatch, 'gi');
-      return place.name.match(regex) || place.state.match(regex);
+      return place.name.match(regex);
     });
   }
 
@@ -163,6 +163,19 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
+/***/ }),
+
+/***/ "./src/scss/my-ip.scss":
+/*!*****************************!*\
+  !*** ./src/scss/my-ip.scss ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
 /***/ })
 
 /******/ 	});
@@ -252,6 +265,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
+/******/ 			"css/my-ip": 0,
 /******/ 			"css/screen-size": 0,
 /******/ 			"css/style": 0
 /******/ 		};
@@ -303,9 +317,10 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/screen-size","css/style"], () => (__webpack_require__("./src/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/screen-size","css/style"], () => (__webpack_require__("./src/scss/style.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/screen-size","css/style"], () => (__webpack_require__("./src/scss/screen-size.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/my-ip","css/screen-size","css/style"], () => (__webpack_require__("./src/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/my-ip","css/screen-size","css/style"], () => (__webpack_require__("./src/scss/style.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/my-ip","css/screen-size","css/style"], () => (__webpack_require__("./src/scss/screen-size.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/my-ip","css/screen-size","css/style"], () => (__webpack_require__("./src/scss/my-ip.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
