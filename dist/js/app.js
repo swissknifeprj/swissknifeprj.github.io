@@ -22,7 +22,22 @@ __webpack_require__(/*! ./components/headerSearch */ "./src/js/components/header
 /***/ (() => {
 
 document.addEventListener("DOMContentLoaded", function () {
+  var _document$querySelect;
   var header = document.querySelector('header');
+  var link = document.querySelectorAll('.js--main-menu a');
+  var highlighter = (_document$querySelect = document.querySelector('.js--heder-highlight')) !== null && _document$querySelect !== void 0 ? _document$querySelect : false;
+  var windowWidth = window.innerWidth;
+  window.addEventListener('resize', function () {
+    windowWidth = window.innerWidth;
+    if (highlighter) {
+      highlighter.removeAttribute('style');
+      if (windowWidth < 767) {
+        highlighter.classList.add('hidden');
+      } else {
+        highlighter.classList.remove('hidden');
+      }
+    }
+  });
   var changeHeaderOnScroll = function changeHeaderOnScroll() {
     if (window.pageYOffset > 0) {
       header.classList.add('scrolled');
@@ -33,6 +48,21 @@ document.addEventListener("DOMContentLoaded", function () {
   changeHeaderOnScroll();
   window.addEventListener('scroll', function () {
     changeHeaderOnScroll();
+  });
+  function linkHighlightin(e) {
+    if (highlighter) {
+      var linkPositions = e.getBoundingClientRect();
+      highlighter.style.width = "".concat(linkPositions.width, "px");
+      highlighter.style.height = "".concat(linkPositions.height, "px");
+      highlighter.style.transform = "translate(".concat(linkPositions.left + window.scrollX, "px, ").concat(linkPositions.top + window.scrollY, "px)");
+    }
+  }
+  link.forEach(function (e) {
+    e.addEventListener('mouseenter', function () {
+      if (windowWidth >= 768) {
+        linkHighlightin(e);
+      }
+    });
   });
 });
 
@@ -88,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var matchArray = findMatches(this.value, pages);
       var html = matchArray.map(function (place) {
         var regex = new RegExp(_this.value, 'gi');
-        var pageName = place.name.replace(regex, "<span class=\"higlight\">".concat(_this.value, "</span>"));
+        var pageName = place.name.replace(regex, "<span class=\"bg-light-green\">".concat(_this.value, "</span>"));
         return "\n                <li>\n                    <a class=\"name\" href=\"".concat(place.url, "\">").concat(pageName, "</a>\n                </li>\n                ");
       }).join('');
       headerSearchResults.innerHTML = html;
